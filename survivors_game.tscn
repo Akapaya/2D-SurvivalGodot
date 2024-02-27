@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bffeo51uuueyf"]
+[gd_scene load_steps=4 format=3 uid="uid://bffeo51uuueyf"]
 
 [ext_resource type="PackedScene" uid="uid://cnqemgq8yr2m6" path="res://Player.tscn" id="1_utxvu"]
 [ext_resource type="PackedScene" uid="uid://xt5kjhxr6kpa" path="res://Fabs/Environment/tree1.tscn" id="2_1x4l1"]
+[ext_resource type="PackedScene" uid="uid://p8fm7j7vir6p" path="res://Fabs/Mobs/Slime1.tscn" id="3_2yr8q"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -14,51 +15,66 @@ offset_bottom = 1040.0
 
 [node name="Player" parent="." instance=ExtResource("1_utxvu")]
 position = Vector2(335, 107)
+moveVelocity = 400
 
-[node name="Tree1" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Mob" parent="." instance=ExtResource("3_2yr8q")]
+position = Vector2(727, -370)
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree1" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(857, 422)
 
-[node name="Tree2" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree2" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1013, -308)
 
-[node name="Tree3" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree3" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(342, -310)
 
-[node name="Tree4" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree4" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(-122, 337)
 
-[node name="Tree5" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree5" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(-433, -95)
 
-[node name="Tree6" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree6" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(266, 725)
 
-[node name="Tree7" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree7" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1420, 332)
 
-[node name="Tree8" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree8" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1307, -124)
 
-[node name="Tree9" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree9" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(996, 43)
 
-[node name="Tree10" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree10" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(-139, -446)
 
-[node name="Tree11" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree11" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(-588, 275)
 
-[node name="Tree12" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree12" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(-489, 733)
 
-[node name="Tree13" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree13" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(778, 725)
 
-[node name="Tree14" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree14" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1680, -463)
 
-[node name="Tree15" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree15" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1338, 733)
 
-[node name="Tree16" parent="." instance=ExtResource("2_1x4l1")]
+[node name="Tree16" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1694, 442)
+
+[node name="Mob2" parent="." instance=ExtResource("3_2yr8q")]
+position = Vector2(574, 753)
+
+[node name="Mob3" parent="." instance=ExtResource("3_2yr8q")]
+position = Vector2(-291, 289)
+
+[node name="Mob4" parent="." instance=ExtResource("3_2yr8q")]
+position = Vector2(1680, 71)
