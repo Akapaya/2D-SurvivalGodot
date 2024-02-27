@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bffeo51uuueyf"]
+[gd_scene load_steps=7 format=3 uid="uid://bffeo51uuueyf"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_6hm33"]
 [ext_resource type="PackedScene" uid="uid://cnqemgq8yr2m6" path="res://Player.tscn" id="1_utxvu"]
 [ext_resource type="PackedScene" uid="uid://xt5kjhxr6kpa" path="res://Fabs/Environment/tree1.tscn" id="2_1x4l1"]
 [ext_resource type="PackedScene" uid="uid://p8fm7j7vir6p" path="res://Fabs/Mobs/Slime1.tscn" id="3_2yr8q"]
+[ext_resource type="FontFile" uid="uid://c76bje0t80oxo" path="res://PoetsenOne-Regular.ttf" id="5_h6j4i"]
 
 [sub_resource type="Curve2D" id="Curve2D_1ha1p"]
 _data = {
@@ -105,4 +106,31 @@ position = Vector2(1680, 71)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="GamerOverScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GamerOverScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+
+[node name="Label" type="Label" parent="GamerOverScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.956863, 0.901961, 0.513726, 1)
+theme_override_fonts/font = ExtResource("5_h6j4i")
+theme_override_font_sizes/font_size = 182
+text = "GAMEOVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
