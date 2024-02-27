@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnqemgq8yr2m6"]
+[gd_scene load_steps=8 format=3 uid="uid://cnqemgq8yr2m6"]
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_58btx"]
 [ext_resource type="Script" path="res://Player.gd" id="1_wwwnp"]
@@ -11,6 +11,20 @@ height = 122.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ektc5"]
 radius = 37.0
 height = 134.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vljat"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 0.94902)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5t1c"]
+bg_color = Color(0.623529, 0.866667, 0.317647, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wwwnp")
@@ -38,3 +52,14 @@ collision_mask = 2
 position = Vector2(0, -39)
 shape = SubResource("CapsuleShape2D_ektc5")
 debug_color = Color(0.717647, 0, 0.372549, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -79.0
+offset_top = -146.0
+offset_right = 83.0
+offset_bottom = -119.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vljat")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a5t1c")
+value = 100.0
+show_percentage = false
