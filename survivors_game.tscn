@@ -7,18 +7,19 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1091.0
-offset_top = -798.0
-offset_right = 1981.0
-offset_bottom = 1040.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -539.0
+offset_top = -336.0
+offset_right = 2533.0
+offset_bottom = 1502.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_utxvu")]
-position = Vector2(335, 107)
+position = Vector2(964, 543)
 moveVelocity = 400
-
-[node name="Mob" parent="." instance=ExtResource("3_2yr8q")]
-position = Vector2(727, -370)
 
 [node name="Trees" type="Node" parent="."]
 
@@ -70,11 +71,16 @@ position = Vector2(1338, 733)
 [node name="Tree16" parent="Trees" instance=ExtResource("2_1x4l1")]
 position = Vector2(1694, 442)
 
-[node name="Mob2" parent="." instance=ExtResource("3_2yr8q")]
+[node name="Node" type="Node" parent="."]
+
+[node name="Mob" parent="Node" instance=ExtResource("3_2yr8q")]
+position = Vector2(727, -370)
+
+[node name="Mob2" parent="Node" instance=ExtResource("3_2yr8q")]
 position = Vector2(574, 753)
 
-[node name="Mob3" parent="." instance=ExtResource("3_2yr8q")]
+[node name="Mob3" parent="Node" instance=ExtResource("3_2yr8q")]
 position = Vector2(-291, 289)
 
-[node name="Mob4" parent="." instance=ExtResource("3_2yr8q")]
+[node name="Mob4" parent="Node" instance=ExtResource("3_2yr8q")]
 position = Vector2(1680, 71)
